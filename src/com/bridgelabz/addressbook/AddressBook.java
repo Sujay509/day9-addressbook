@@ -91,7 +91,30 @@ public class AddressBook {
 				}
 				System.out.println("Updated Sucessfully ...");
 			}
+			int choice = 0;
+			while (choice != 9);
+			}
+		if(isAvailable == false){
+			System.out.println("Contact is not Available \nTry again");
 		}
+		}
+		public void deleteContact() {
+			// taking first name of contact to be deleted
+			System.out.println("Enter the First Name of Contact to Delete");
+			String firstName = sc.next();
+			boolean isAvailable = false;
+			for(Contact contact : contactArrayList) {
+				if(contact.getFirstName().equalsIgnoreCase(firstName)) {
+					// removing the contact if first name matched
+					isAvailable = true ;
+					contactArrayList.remove(contact);
+					System.out.println("Contact deleted sucessfully");
+					break;
+				}
+			}
+			if (isAvailable == false) {
+				System.out.println("Sorry ! Data not found");
+			}
 		if(isAvailable == false){
 			System.out.println("Contact is not Available \nTry again");
 		}
